@@ -489,20 +489,15 @@ void hdd_copy_ht_caps(struct ieee80211_ht_cap *hdd_ht_cap,
 
     /* mcs data rate */
     for (i = 0; i < IEEE80211_HT_MCS_MASK_LEN; ++i) {
-        hdd_ht_cap->mcs.rx_mask[i] =
-            roam_ht_cap->supportedMCSSet[i];
-
-        hdd_ht_cap->mcs.rx_highest =
-            ((short) (roam_ht_cap->supportedMCSSet[11]) << 8) |
-            ((short) (roam_ht_cap->supportedMCSSet[10]));
-        hdd_ht_cap->mcs.tx_params =
-            roam_ht_cap->supportedMCSSet[12];
-<<<<<<< HEAD
-
-=======
+         hdd_ht_cap->mcs.rx_mask[i] =
+             roam_ht_cap->supportedMCSSet[i];
+         hdd_ht_cap->mcs.rx_highest =
+             ((short) (roam_ht_cap->supportedMCSSet[11]) << 8) |
+             ((short) (roam_ht_cap->supportedMCSSet[10]));
+         hdd_ht_cap->mcs.tx_params =
+             roam_ht_cap->supportedMCSSet[12];
     }
->>>>>>> f9bbf1e... kernel: Fix all CC warnings reported by Linaro Snapshot 7.2-2017.11
-}
+ }
 
 
 #define VHT_CAP_MAX_MPDU_LENGTH_MASK		0x00000003
