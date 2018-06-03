@@ -762,7 +762,11 @@ int timekeeping_inject_offset(struct timespec *ts)
 	/* Make sure the proposed value is valid */
 	tmp = timespec64_add(tk_xtime(tk),  ts64);
 	if (timespec64_compare(&tk->wall_to_monotonic, &ts64) > 0 ||
+<<<<<<< HEAD
 	    !timespec64_valid_strict(&tmp)) {
+=======
+		!timespec64_valid_strict(&tmp)) {
+>>>>>>> b0b357c20ca6171b8ac698351f5202402b7ad7d5
 		ret = -EINVAL;
 		goto error;
 	}
