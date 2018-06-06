@@ -23,7 +23,6 @@
 #define EXT4_XATTR_INDEX_SECURITY	        6
 #define EXT4_XATTR_INDEX_SYSTEM			7
 #define EXT4_XATTR_INDEX_RICHACL		8
-#define EXT4_XATTR_INDEX_ENCRYPTION		9
 
 struct ext4_xattr_header {
 	__le32	h_magic;	/* magic number for identification */
@@ -99,9 +98,6 @@ extern const struct xattr_handler ext4_xattr_user_handler;
 extern const struct xattr_handler ext4_xattr_trusted_handler;
 extern const struct xattr_handler ext4_xattr_security_handler;
 
-<<<<<<< HEAD
-#define EXT4_XATTR_NAME_ENCRYPTION_CONTEXT "c"
-=======
 /*
  * The EXT4_STATE_NO_EXPAND is overloaded and used for two purposes.
  * The first is to signal that there the inline xattrs and data are
@@ -133,7 +129,6 @@ static inline void ext4_write_unlock_xattr(struct inode *inode, int *save)
 		ext4_clear_inode_state(inode, EXT4_STATE_NO_EXPAND);
 	up_write(&EXT4_I(inode)->xattr_sem);
 }
->>>>>>> b0b357c20ca6171b8ac698351f5202402b7ad7d5
 
 extern ssize_t ext4_listxattr(struct dentry *, char *, size_t);
 
